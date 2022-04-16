@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:airplane/shared/theme.dart';
+import 'package:airplane/ui/widgets/custome_button.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -135,20 +136,9 @@ class SignUpPage extends StatelessWidget {
       }
 
       Widget submitButton() {
-        return Container(
-          width: double.infinity,
-          height: 55,
-          child: TextButton(
-            onPressed: () => Navigator.pushNamed(context, '/bonus'),
-            style: TextButton.styleFrom(
-                backgroundColor: kPrimaryColor,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(defaultRadius))),
-            child: Text(
-              'Get Started',
-              style: whiteStyle.copyWith(fontSize: 18, fontWeight: medium),
-            ),
-          ),
+        return CustomeButton(
+            title: 'Get Started',
+            onPressed: () => Navigator.pushNamed(context, '/bonus')
         );
       }
 
@@ -177,10 +167,9 @@ class SignUpPage extends StatelessWidget {
         child: Text(
           'Terms and Conditions',
           style: greyStyle.copyWith(
-            fontSize: 16,
-            fontWeight: light,
-            decoration: TextDecoration.underline
-          ),
+              fontSize: 16,
+              fontWeight: light,
+              decoration: TextDecoration.underline),
         ),
       );
     }

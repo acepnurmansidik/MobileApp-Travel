@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:airplane/shared/theme.dart';
+import 'package:airplane/ui/widgets/custome_button.dart';
 
 class BonusPage extends StatelessWidget {
   const BonusPage({Key? key}) : super(key: key);
@@ -100,24 +101,11 @@ class BonusPage extends StatelessWidget {
     }
 
     Widget startButton() {
-      return Container(
+      return CustomeButton(
         width: 220,
-        height: 55,
         margin: EdgeInsets.only(top: 50),
-        child: TextButton(
-          onPressed: () {
-            Navigator.pushNamed(context, '/main');
-          },
-          style: TextButton.styleFrom(
-              backgroundColor: kPrimaryColor,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(defaultRadius))),
-          child: Text(
-            'Start Fly Now',
-            style: whiteStyle.copyWith(fontSize: 18, fontWeight: light),
-          ),
-        ),
-      );
+        title: 'Start Fly Now', 
+        onPressed: () => Navigator.pushNamed(context, '/main'));
     }
 
     return Scaffold(
