@@ -1,4 +1,5 @@
 import 'package:airplane/shared/theme.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class GetStartedPage extends StatelessWidget {
@@ -13,28 +14,24 @@ class GetStartedPage extends StatelessWidget {
             width: double.infinity,
             height: double.infinity,
             decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/img_plane.png')
-              )
-            ),
+                image: DecorationImage(
+                    image: AssetImage('assets/images/img_plane.png'))),
           ),
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text('Fly like a bird', style: whiteStyle.copyWith(
-                  fontSize: 32,
-                  fontWeight: semibold
-                ),),
+                Text(
+                  'Fly like a bird',
+                  style:
+                      whiteStyle.copyWith(fontSize: 32, fontWeight: semibold),
+                ),
                 SizedBox(
                   height: 10,
                 ),
                 Text(
                   'Explore new world with us and let\nyourself get an amazing experiences',
-                  style: whiteStyle.copyWith(
-                    fontSize: 16,
-                    fontWeight: light
-                  ),
+                  style: whiteStyle.copyWith(fontSize: 16, fontWeight: light),
                   textAlign: TextAlign.center,
                 ),
                 Container(
@@ -42,17 +39,16 @@ class GetStartedPage extends StatelessWidget {
                   height: 55,
                   margin: EdgeInsets.only(top: 50, bottom: 80),
                   child: TextButton(
-                    onPressed: (){},
+                    onPressed: () {},
                     style: TextButton.styleFrom(
-                      backgroundColor: kPrimaryColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(17)
-                      )
+                        backgroundColor: kPrimaryColor,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(17))),
+                    child: Text(
+                      'Get Started',
+                      style:
+                          whiteStyle.copyWith(fontSize: 18, fontWeight: medium),
                     ),
-                    child: Text('Get Started',style: whiteStyle.copyWith(
-                      fontSize: 18,
-                      fontWeight: medium
-                    ),),
                   ),
                 )
               ],
