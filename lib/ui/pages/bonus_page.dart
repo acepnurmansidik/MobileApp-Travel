@@ -67,7 +67,8 @@ class BonusPage extends StatelessWidget {
                   ),
                   Text(
                     'IDR 280.000.000',
-                    style: whiteStyle.copyWith(fontSize: 26, fontWeight: medium),
+                    style:
+                        whiteStyle.copyWith(fontSize: 26, fontWeight: medium),
                   )
                 ],
               ),
@@ -104,19 +105,16 @@ class BonusPage extends StatelessWidget {
         height: 55,
         margin: EdgeInsets.only(top: 50),
         child: TextButton(
-          onPressed: (){},
+          onPressed: () {
+            Navigator.pushNamed(context, '/main');
+          },
           style: TextButton.styleFrom(
-            backgroundColor: kPrimaryColor,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(defaultRadius)
-            )
-          ),
+              backgroundColor: kPrimaryColor,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(defaultRadius))),
           child: Text(
             'Start Fly Now',
-            style: whiteStyle.copyWith(
-              fontSize: 18,
-              fontWeight: light
-            ),
+            style: whiteStyle.copyWith(fontSize: 18, fontWeight: light),
           ),
         ),
       );
@@ -127,7 +125,7 @@ class BonusPage extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [bonusCard(), title(), subTitle(),startButton()],
+          children: [bonusCard(), title(), subTitle(), startButton()],
         ),
       ),
     );
