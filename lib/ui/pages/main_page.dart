@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:airplane/shared/theme.dart';
+import '../widgets/custome_bottom_navigation_item.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -24,98 +25,10 @@ class MainPage extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(),
-                  Container(
-                    width: 24,
-                    height: 24,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/icons/icon_home_active.png')
-                      )
-                    ),
-                  ),
-                  Container(
-                    width: 30,
-                    height: 2,
-                    decoration: BoxDecoration(
-                      color: kPrimaryColor,
-                      borderRadius: BorderRadius.circular(18)
-                    ),
-                  )
-                ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(),
-                  Container(
-                    width: 24,
-                    height: 24,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/icons/icon_book.png')
-                      )
-                    ),
-                  ),
-                  Container(
-                    width: 30,
-                    height: 2,
-                    decoration: BoxDecoration(
-                      color: kTransparentColor,
-                      borderRadius: BorderRadius.circular(18)
-                    ),
-                  ),
-                ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(),
-                  Container(
-                    width: 24,
-                    height: 24,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/icons/icon_credit.png')
-                      )
-                    ),
-                  ),
-                  Container(
-                    width: 30,
-                    height: 2,
-                    decoration: BoxDecoration(
-                      color: kTransparentColor,
-                      borderRadius: BorderRadius.circular(18)
-                    ),
-                  )
-                ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(),
-                  Container(
-                    width: 24,
-                    height: 24,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/icons/icon_setting.png')
-                      )
-                    ),
-                  ),
-                  Container(
-                    width: 30,
-                    height: 2,
-                    decoration: BoxDecoration(
-                      color: kTransparentColor,
-                      borderRadius: BorderRadius.circular(18)
-                    ),
-                  )
-                ],
-              )
+              CustomeBottomNavigationItem(isSelected: true, imgUrl: 'icon_home_active.png',),
+              CustomeBottomNavigationItem(isSelected: false, imgUrl: 'icon_book.png',),
+              CustomeBottomNavigationItem(isSelected: false, imgUrl: 'icon_credit.png',),
+              CustomeBottomNavigationItem(isSelected: false, imgUrl: 'icon_setting.png',)
             ],
           ),
         ),
