@@ -15,7 +15,7 @@ double defaultRadius = 17.0;
 
 // TextStyle ===========================================
 TextStyle blackStyle = GoogleFonts.poppins(
-  color: kBackgroundColor,
+  color: kBlackColor,
 );
 
 TextStyle whiteStyle = GoogleFonts.poppins(
