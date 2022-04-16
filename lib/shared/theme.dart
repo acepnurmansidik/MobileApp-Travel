@@ -10,6 +10,9 @@ Color kRedColor = const Color(0xFFEB70A5);
 Color kBackgroundColor = const Color(0xFFFAFAFA);
 Color kInactiveColor = const Color(0xFFDBD7EC);
 
+double defaultMargin = 24.0;
+double defaultRadius = 17.0;
+
 // TextStyle ===========================================
 TextStyle blackStyle = GoogleFonts.poppins(
   color: kBackgroundColor,
