@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:airplane/shared/theme.dart';
+import 'package:airplane/ui/pages/home_page.dart';
 import '../widgets/custome_bottom_navigation_item.dart';
 
 class MainPage extends StatelessWidget {
@@ -7,6 +8,10 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget buildContent() {
+      return HomePage();
+    }
+
     Widget customeButtonNavigation() {
       return Align(
         alignment: Alignment.bottomCenter,
@@ -14,21 +19,28 @@ class MainPage extends StatelessWidget {
           height: 60,
           width: double.infinity,
           margin: EdgeInsets.only(
-            bottom: 30,
-            left: defaultMargin,
-            right: defaultMargin
-          ),
+              bottom: 30, left: defaultMargin, right: defaultMargin),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(18),
-            color: kWhiteColor
-          ),
+              borderRadius: BorderRadius.circular(18), color: kWhiteColor),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              CustomeBottomNavigationItem(isSelected: true, imgUrl: 'icon_home_active.png',),
-              CustomeBottomNavigationItem(isSelected: false, imgUrl: 'icon_book.png',),
-              CustomeBottomNavigationItem(isSelected: false, imgUrl: 'icon_credit.png',),
-              CustomeBottomNavigationItem(isSelected: false, imgUrl: 'icon_setting.png',)
+              CustomeBottomNavigationItem(
+                isSelected: true,
+                imgUrl: 'icon_home_active.png',
+              ),
+              CustomeBottomNavigationItem(
+                isSelected: false,
+                imgUrl: 'icon_book.png',
+              ),
+              CustomeBottomNavigationItem(
+                isSelected: false,
+                imgUrl: 'icon_credit.png',
+              ),
+              CustomeBottomNavigationItem(
+                isSelected: false,
+                imgUrl: 'icon_setting.png',
+              )
             ],
           ),
         ),
@@ -38,7 +50,7 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: Stack(
-        children: [Text('MAIN'),customeButtonNavigation()],
+        children: [buildContent(), customeButtonNavigation()],
       ),
     );
   }
