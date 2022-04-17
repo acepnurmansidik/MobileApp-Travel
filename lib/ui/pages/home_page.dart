@@ -1,4 +1,5 @@
 import 'package:airplane/ui/widgets/destination_card.dart';
+import 'package:airplane/ui/widgets/destination_tile.dart';
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
 
@@ -90,10 +91,63 @@ class HomePage extends StatelessWidget {
     );
   }
 
+  Widget newDestination() {
+    return Container(
+      margin: EdgeInsets.only(
+        top: 30,
+        bottom: 140,
+        left: defaultMargin,
+        right: defaultMargin
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'New This Year',
+            style: blackStyle.copyWith(
+              fontSize: 18,
+              fontWeight: semibold
+            ),
+          ),
+          DestinationTile(
+            name: 'Danau Beratan',
+            city: 'Bali',
+            imgUrl: 'dest_6.png',
+            rating: 4.5,
+          ),
+          DestinationTile(
+            name: 'Sydney Opera',
+            city: 'Australia',
+            imgUrl: 'dest_7.png',
+            rating: 4.5,
+          ),
+          DestinationTile(
+            name: 'Roma',
+            city: 'Italia',
+            imgUrl: 'dest_8.png',
+            rating: 4.5,
+          ),
+          DestinationTile(
+            name: 'Payung Teduh',
+            city: 'Singapore',
+            imgUrl: 'dest_9.png',
+            rating: 4.5,
+          ),
+          DestinationTile(
+            name: 'Hill Heyo',
+            city: 'Monaco',
+            imgUrl: 'dest_10.png',
+            rating: 4.5,
+          )
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: [header(), popularDestination()],
+      children: [header(), popularDestination(), newDestination()],
     );
   }
 }
