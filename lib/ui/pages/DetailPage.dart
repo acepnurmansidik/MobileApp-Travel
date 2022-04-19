@@ -1,3 +1,4 @@
+import 'package:airplane/ui/widgets/interest_item.dart';
 import 'package:airplane/ui/widgets/photo_item.dart';
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
@@ -149,6 +150,28 @@ class DetailPage extends StatelessWidget {
                         PhotoItem(imgUrl: 'image_photo3.png'),
                       ],
                     ),
+                  ),
+                  SizedBox(height: 20,),
+                  Text(
+                    'Interests',
+                    style: blackStyle.copyWith(
+                      fontSize: 16,
+                      fontWeight: semibold
+                    ),
+                  ),
+                  SizedBox(height: 6,),
+                  Row(
+                    children: [
+                      InterestItem(text: 'Kids Park'),
+                      InterestItem(text: 'Honor Bridges'),
+                      ],
+                  ),
+                  SizedBox(height: 10,),
+                  Row(
+                    children: [
+                      InterestItem(text: 'City Museum'),
+                      InterestItem(text: 'Central Mall'),
+                      ],
                   )
                 ],
               ),
