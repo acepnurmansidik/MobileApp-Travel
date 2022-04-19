@@ -1,3 +1,4 @@
+import 'package:airplane/ui/widgets/seat_item.dart';
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
 
@@ -98,9 +99,13 @@ class ChooseSeatPage extends StatelessWidget {
         ),
         child: Column(
           children: [
+            // NOTED: SEAT INDICATORS
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Expanded(
+                Container(
+                  height: 48,
+                  width: 48,
                   child: Center(
                     child: Text(
                       'A', 
@@ -108,7 +113,9 @@ class ChooseSeatPage extends StatelessWidget {
                     )
                   ),
                 ),
-                Expanded(
+                Container(
+                  height: 48,
+                  width: 48,
                   child: Center(
                     child: Text(
                       'B', 
@@ -116,7 +123,9 @@ class ChooseSeatPage extends StatelessWidget {
                     )
                   ),
                 ),
-                Expanded(
+                Container(
+                  height: 48,
+                  width: 48,
                   child: Center(
                     child: Text(
                       '', 
@@ -124,7 +133,9 @@ class ChooseSeatPage extends StatelessWidget {
                     )
                   ),
                 ),
-                Expanded(
+                Container(
+                  height: 48,
+                  width: 48,
                   child: Center(
                     child: Text(
                       'C', 
@@ -132,7 +143,9 @@ class ChooseSeatPage extends StatelessWidget {
                     )
                   ),
                 ),
-                Expanded(
+                Container(
+                  height: 48,
+                  width: 48,
                   child: Center(
                     child: Text(
                       'D', 
@@ -142,6 +155,24 @@ class ChooseSeatPage extends StatelessWidget {
                 ),
               ],
             ),
+            // NOTED: SEAT 1
+            Container(
+              margin: EdgeInsets.only(top: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  SeatItem(),
+                  SeatItem(),
+                  Container(
+                    height: 48,
+                    width: 48,
+                    child: Center(child: Text('1', style: greyStyle.copyWith(fontSize: 16),)),
+                  ),
+                  SeatItem(),
+                  SeatItem(),
+                ],
+              ),
+            )
           ],
         ),
       );
