@@ -1,3 +1,4 @@
+import 'package:airplane/ui/widgets/custome_button.dart';
 import 'package:airplane/ui/widgets/seat_item.dart';
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
@@ -89,14 +90,9 @@ class ChooseSeatPage extends StatelessWidget {
     Widget seatIndicator() {
       return Container(
         margin: EdgeInsets.only(top: 30),
-        padding: EdgeInsets.symmetric(
-          horizontal: 22,
-          vertical: 30
-        ),
+        padding: EdgeInsets.symmetric(horizontal: 22, vertical: 30),
         decoration: BoxDecoration(
-          color: kWhiteColor,
-          borderRadius: BorderRadius.circular(18)
-        ),
+            color: kWhiteColor, borderRadius: BorderRadius.circular(18)),
         child: Column(
           children: [
             // NOTED: SEAT INDICATORS
@@ -107,51 +103,46 @@ class ChooseSeatPage extends StatelessWidget {
                   height: 48,
                   width: 48,
                   child: Center(
-                    child: Text(
-                      'A', 
-                      style: greyStyle.copyWith(fontSize: 16),
-                    )
-                  ),
+                      child: Text(
+                    'A',
+                    style: greyStyle.copyWith(fontSize: 16),
+                  )),
                 ),
                 Container(
                   height: 48,
                   width: 48,
                   child: Center(
-                    child: Text(
-                      'B', 
-                      style: greyStyle.copyWith(fontSize: 16),
-                    )
-                  ),
+                      child: Text(
+                    'B',
+                    style: greyStyle.copyWith(fontSize: 16),
+                  )),
                 ),
                 Container(
                   height: 48,
                   width: 48,
                   child: Center(
-                    child: Text(
-                      '', 
-                      style: greyStyle.copyWith(fontSize: 16),
-                    )
-                  ),
+                      child: Text(
+                    '',
+                    style: greyStyle.copyWith(fontSize: 16),
+                  )),
                 ),
                 Container(
                   height: 48,
                   width: 48,
                   child: Center(
-                    child: Text(
-                      'C', 
-                      style: greyStyle.copyWith(fontSize: 16),
-                    )
-                  ),
+                      child: Text(
+                    'C',
+                    style: greyStyle.copyWith(fontSize: 16),
+                  )),
                 ),
                 Container(
                   height: 48,
                   width: 48,
                   child: Center(
-                    child: Text(
-                      'D', 
-                      style: greyStyle.copyWith(fontSize: 16),
-                    )
-                  ),
+                      child: Text(
+                    'D',
+                    style: greyStyle.copyWith(fontSize: 16),
+                  )),
                 ),
               ],
             ),
@@ -161,15 +152,27 @@ class ChooseSeatPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  SeatItem(status: 2,),
-                  SeatItem(status: 2,),
+                  SeatItem(
+                    status: 2,
+                  ),
+                  SeatItem(
+                    status: 2,
+                  ),
                   Container(
                     height: 48,
                     width: 48,
-                    child: Center(child: Text('1', style: greyStyle.copyWith(fontSize: 16),)),
+                    child: Center(
+                        child: Text(
+                      '1',
+                      style: greyStyle.copyWith(fontSize: 16),
+                    )),
                   ),
-                  SeatItem(status: 0,),
-                  SeatItem(status: 2,),
+                  SeatItem(
+                    status: 0,
+                  ),
+                  SeatItem(
+                    status: 2,
+                  ),
                 ],
               ),
             ),
@@ -179,15 +182,27 @@ class ChooseSeatPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  SeatItem(status: 0,),
-                  SeatItem(status: 0,),
+                  SeatItem(
+                    status: 0,
+                  ),
+                  SeatItem(
+                    status: 0,
+                  ),
                   Container(
                     height: 48,
                     width: 48,
-                    child: Center(child: Text('2', style: greyStyle.copyWith(fontSize: 16),)),
+                    child: Center(
+                        child: Text(
+                      '2',
+                      style: greyStyle.copyWith(fontSize: 16),
+                    )),
                   ),
-                  SeatItem(status: 0,),
-                  SeatItem(status: 2,),
+                  SeatItem(
+                    status: 0,
+                  ),
+                  SeatItem(
+                    status: 2,
+                  ),
                 ],
               ),
             ),
@@ -197,15 +212,27 @@ class ChooseSeatPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  SeatItem(status: 1,),
-                  SeatItem(status: 1,),
+                  SeatItem(
+                    status: 1,
+                  ),
+                  SeatItem(
+                    status: 1,
+                  ),
                   Container(
                     height: 48,
                     width: 48,
-                    child: Center(child: Text('3', style: greyStyle.copyWith(fontSize: 16),)),
+                    child: Center(
+                        child: Text(
+                      '3',
+                      style: greyStyle.copyWith(fontSize: 16),
+                    )),
                   ),
-                  SeatItem(status: 0,),
-                  SeatItem(status: 0,),
+                  SeatItem(
+                    status: 0,
+                  ),
+                  SeatItem(
+                    status: 0,
+                  ),
                 ],
               ),
             ),
@@ -215,15 +242,27 @@ class ChooseSeatPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  SeatItem(status: 2,),
-                  SeatItem(status: 2,),
+                  SeatItem(
+                    status: 2,
+                  ),
+                  SeatItem(
+                    status: 2,
+                  ),
                   Container(
                     height: 48,
                     width: 48,
-                    child: Center(child: Text('4', style: greyStyle.copyWith(fontSize: 16),)),
+                    child: Center(
+                        child: Text(
+                      '4',
+                      style: greyStyle.copyWith(fontSize: 16),
+                    )),
                   ),
-                  SeatItem(status: 0,),
-                  SeatItem(status: 2,),
+                  SeatItem(
+                    status: 0,
+                  ),
+                  SeatItem(
+                    status: 2,
+                  ),
                 ],
               ),
             ),
@@ -233,15 +272,66 @@ class ChooseSeatPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  SeatItem(status: 0,),
-                  SeatItem(status: 0,),
+                  SeatItem(
+                    status: 0,
+                  ),
+                  SeatItem(
+                    status: 0,
+                  ),
                   Container(
                     height: 48,
                     width: 48,
-                    child: Center(child: Text('5', style: greyStyle.copyWith(fontSize: 16),)),
+                    child: Center(
+                        child: Text(
+                      '5',
+                      style: greyStyle.copyWith(fontSize: 16),
+                    )),
                   ),
-                  SeatItem(status: 2,),
-                  SeatItem(status: 0,),
+                  SeatItem(
+                    status: 2,
+                  ),
+                  SeatItem(
+                    status: 0,
+                  ),
+                ],
+              ),
+            ),
+
+            // NOTED: YOUR SEAT
+            Container(
+              margin: EdgeInsets.only(
+                  top: 30, left: defaultMargin, right: defaultMargin),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Your seat',
+                    style: greyStyle.copyWith(fontWeight: light),
+                  ),
+                  Text(
+                    'A3, B3',
+                    style:
+                        blackStyle.copyWith(fontSize: 16, fontWeight: medium),
+                  )
+                ],
+              ),
+            ),
+            // NOTED: Total
+            Container(
+              margin: EdgeInsets.only(
+                  top: 16, left: defaultMargin, right: defaultMargin),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Total',
+                    style: greyStyle.copyWith(fontWeight: light),
+                  ),
+                  Text(
+                    'IDR 540.000.000',
+                    style: purpleStyle.copyWith(
+                        fontSize: 16, fontWeight: semibold),
+                  )
                 ],
               ),
             ),
@@ -250,11 +340,21 @@ class ChooseSeatPage extends StatelessWidget {
       );
     }
 
+    Widget checkoutButton() {
+      return CustomeButton(
+        title: 'Continue & Checkout', 
+        onPressed: () {}, 
+        margin: EdgeInsets.only(
+          top: 30
+        ),
+      );
+    }
+
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: defaultMargin),
-        children: [title(), seatStatus(), seatIndicator()],
+        children: [title(), seatStatus(), seatIndicator(), checkoutButton()],
       ),
     );
   }
