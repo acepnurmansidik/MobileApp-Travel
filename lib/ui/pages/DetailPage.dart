@@ -1,3 +1,4 @@
+import 'package:airplane/ui/widgets/custome_button.dart';
 import 'package:airplane/ui/widgets/interest_item.dart';
 import 'package:airplane/ui/widgets/photo_item.dart';
 import 'package:flutter/material.dart';
@@ -118,6 +119,7 @@ class DetailPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // NOTED: ABOUT
                   Text(
                     'About',
                     style: blackStyle.copyWith(
@@ -140,6 +142,7 @@ class DetailPage extends StatelessWidget {
                       fontWeight: semibold
                     ),
                   ),
+                  // NOTED: PHOTOS
                   SizedBox(height: 6,),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
@@ -152,6 +155,7 @@ class DetailPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 20,),
+                  // NOTED: INTERESTS
                   Text(
                     'Interests',
                     style: blackStyle.copyWith(
@@ -172,18 +176,54 @@ class DetailPage extends StatelessWidget {
                       InterestItem(text: 'City Museum'),
                       InterestItem(text: 'Central Mall'),
                       ],
-                  )
+                  ),
                 ],
               ),
-            )
+            ),
+            // NOTED: PRICE & BOOK BUTTON
+            Container(
+              width: double.infinity,
+              margin: EdgeInsets.symmetric(
+                vertical: 30
+              ),
+              child: Row(
+                children: [
+                  // NOTED: PRICE
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'IDR 2.500.000',
+                          style: blackStyle.copyWith(
+                            fontSize: 18,
+                            fontWeight: medium
+                          ),
+                        ),
+                        Text(
+                          'per orang',
+                          style: greyStyle.copyWith(
+                            fontWeight: light
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  // NOTED: BUTTON BOOK NOW
+                  CustomeButton(title: 'Book Now', onPressed: (){}, width: 170,)
+                ],
+              ),
+            ),
           ],
         ),
       );
     }
 
     return Scaffold(
-      body: Stack(
-        children: [backgroundImage(), customeShadow(), content()],
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [backgroundImage(), customeShadow(), content()],
+        ),
       ),
     );
   }
