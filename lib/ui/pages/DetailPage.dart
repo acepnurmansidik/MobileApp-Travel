@@ -40,6 +40,7 @@ class DetailPage extends StatelessWidget {
         ),
         child: Column(
           children: [
+            // NOTED: EMBLEM
             Container(
               height: 24,
               width: 108,
@@ -50,6 +51,7 @@ class DetailPage extends StatelessWidget {
                 )
               ),
             ),
+            // NOTED: TITLE
             Container(
               margin: EdgeInsets.only(top: 256),
               child: Row(
@@ -95,6 +97,38 @@ class DetailPage extends StatelessWidget {
                         ),
                       )
                     ],
+                  )
+                ],
+              ),
+            ),
+            // NOTED: DESCRIPTION
+            Container(
+              width: double.infinity,
+              margin: EdgeInsets.only(top: 30),
+              padding: EdgeInsets.symmetric(
+                vertical: 30,
+                horizontal: 20
+              ),
+              decoration: BoxDecoration(
+                color: kWhiteColor,
+                borderRadius: BorderRadius.circular(18)
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'About',
+                    style: blackStyle.copyWith(
+                      fontSize: 16,
+                      fontWeight: semibold
+                    ),
+                  ),
+                  SizedBox(height: 6,),
+                  Text(
+                    'Berada di jalur jalan provinsi yang menghubungkan Denpasar Singaraja serta letaknya yang dekat dengan Kebun Raya Eka Karya menjadikan tempat Bali.',
+                    style: blackStyle.copyWith(
+                      height: 2.6
+                    ),
                   )
                 ],
               ),
