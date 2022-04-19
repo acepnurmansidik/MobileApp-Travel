@@ -31,10 +31,9 @@ class ChooseSeatPage extends StatelessWidget {
                   height: 16,
                   margin: EdgeInsets.only(right: 6),
                   decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/icons/icon_available.png')
-                    )
-                  ),
+                      image: DecorationImage(
+                          image:
+                              AssetImage('assets/icons/icon_available.png'))),
                 ),
                 Text(
                   'Available',
@@ -42,7 +41,9 @@ class ChooseSeatPage extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(width: 10,),
+            SizedBox(
+              width: 10,
+            ),
             Row(
               children: [
                 Container(
@@ -50,10 +51,8 @@ class ChooseSeatPage extends StatelessWidget {
                   height: 16,
                   margin: EdgeInsets.only(right: 6),
                   decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/icons/icon_selected.png')
-                    )
-                  ),
+                      image: DecorationImage(
+                          image: AssetImage('assets/icons/icon_selected.png'))),
                 ),
                 Text(
                   'Selected',
@@ -61,7 +60,9 @@ class ChooseSeatPage extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(width: 10,),
+            SizedBox(
+              width: 10,
+            ),
             Row(
               children: [
                 Container(
@@ -69,10 +70,9 @@ class ChooseSeatPage extends StatelessWidget {
                   height: 16,
                   margin: EdgeInsets.only(right: 6),
                   decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/icons/icon_unavailable.png')
-                    )
-                  ),
+                      image: DecorationImage(
+                          image:
+                              AssetImage('assets/icons/icon_unavailable.png'))),
                 ),
                 Text(
                   'Unavailable',
@@ -85,11 +85,73 @@ class ChooseSeatPage extends StatelessWidget {
       );
     }
 
+    Widget seatIndicator() {
+      return Container(
+        margin: EdgeInsets.only(top: 30),
+        padding: EdgeInsets.symmetric(
+          horizontal: 22,
+          vertical: 30
+        ),
+        decoration: BoxDecoration(
+          color: kWhiteColor,
+          borderRadius: BorderRadius.circular(18)
+        ),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Center(
+                    child: Text(
+                      'A', 
+                      style: greyStyle.copyWith(fontSize: 16),
+                    )
+                  ),
+                ),
+                Expanded(
+                  child: Center(
+                    child: Text(
+                      'B', 
+                      style: greyStyle.copyWith(fontSize: 16),
+                    )
+                  ),
+                ),
+                Expanded(
+                  child: Center(
+                    child: Text(
+                      '', 
+                      style: greyStyle.copyWith(fontSize: 16),
+                    )
+                  ),
+                ),
+                Expanded(
+                  child: Center(
+                    child: Text(
+                      'C', 
+                      style: greyStyle.copyWith(fontSize: 16),
+                    )
+                  ),
+                ),
+                Expanded(
+                  child: Center(
+                    child: Text(
+                      'D', 
+                      style: greyStyle.copyWith(fontSize: 16),
+                    )
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      );
+    }
+
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: defaultMargin),
-        children: [title(), seatStatus()],
+        children: [title(), seatStatus(), seatIndicator()],
       ),
     );
   }
