@@ -1,3 +1,4 @@
+import 'package:airplane/ui/pages/success_checkout_page.dart';
 import 'package:airplane/ui/widgets/booking_detail_item.dart';
 import 'package:airplane/ui/widgets/custome_button.dart';
 import 'package:flutter/material.dart';
@@ -138,7 +139,7 @@ class CheckoutPage extends StatelessWidget {
             BookingDetailItem(
               title: 'Seat',
               valueText: 'A3, B3',
-              valueColor: kBackgroundColor,
+              valueColor: kBlackColor,
             ),
             BookingDetailItem(
               title: 'Insurance',
@@ -237,7 +238,14 @@ class CheckoutPage extends StatelessWidget {
     }
 
     Widget paymentButton() {
-      return CustomeButton(title: 'Pay Now', onPressed: () {}, margin: EdgeInsets.only(top: 30),);
+      return CustomeButton(
+        title: 'Pay Now',
+        margin: EdgeInsets.only(top: 30),
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => SuccessCheckoutPage()));
+        },
+      );
     }
 
     Widget tacButton() {
@@ -258,7 +266,13 @@ class CheckoutPage extends StatelessWidget {
       backgroundColor: kBackgroundColor,
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: defaultMargin),
-        children: [route(), bokingDetail(), paymentDetail(),paymentButton(), tacButton()],
+        children: [
+          route(),
+          bokingDetail(),
+          paymentDetail(),
+          paymentButton(),
+          tacButton()
+        ],
       ),
     );
   }
