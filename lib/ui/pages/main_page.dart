@@ -1,6 +1,11 @@
+import 'package:airplane/cubit/page_cubit.dart';
+import 'package:airplane/ui/pages/setting_page.dart';
+import 'package:airplane/ui/pages/transaction_page.dart';
+import 'package:airplane/ui/pages/wallet_page.dart';
 import 'package:flutter/material.dart';
 import 'package:airplane/shared/theme.dart';
 import 'package:airplane/ui/pages/home_page.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../widgets/custome_bottom_navigation_item.dart';
 
 class MainPage extends StatelessWidget {
@@ -8,8 +13,19 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget buildContent() {
-      return HomePage();
+    Widget buildContent(int currentIndex) {
+      switch (currentIndex) {
+        case 0:
+          return HomePage();
+        case 1:
+          return TransactionPage();
+        case 2:
+          return WalletPage();
+        case 3:
+          return SettingPage();
+        default:
+          return HomePage();
+      }
     }
 
     Widget customeButtonNavigation() {
@@ -26,19 +42,19 @@ class MainPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               CustomeBottomNavigationItem(
-                isSelected: true,
+                index: 0,
                 imgUrl: 'icon_home_active.png',
               ),
               CustomeBottomNavigationItem(
-                isSelected: false,
+                index: 1,
                 imgUrl: 'icon_book.png',
               ),
               CustomeBottomNavigationItem(
-                isSelected: false,
+                index: 2,
                 imgUrl: 'icon_credit.png',
               ),
               CustomeBottomNavigationItem(
-                isSelected: false,
+                index: 3,
                 imgUrl: 'icon_setting.png',
               )
             ],
@@ -47,11 +63,15 @@ class MainPage extends StatelessWidget {
       );
     }
 
-    return Scaffold(
-      backgroundColor: kBackgroundColor,
-      body: Stack(
-        children: [buildContent(), customeButtonNavigation()],
-      ),
+    return BlocBuilder<PageCubit, int>(
+      builder: (context, currentIndex) {
+        return Scaffold(
+          backgroundColor: kBackgroundColor,
+          body: Stack(
+            children: [buildContent(currentIndex), customeButtonNavigation()],
+          ),
+        );
+      },
     );
   }
 }

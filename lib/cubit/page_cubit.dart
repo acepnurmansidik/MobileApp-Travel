@@ -7,7 +7,7 @@ class PageCubit extends Cubit<int> {
   // methode untuk melakakukan set
   void setPage(int newPage) {
     // mengubah state
-    // * state dari cubit akan diantikan oleh newPage
+    // * state dari cubit akan digantikan oleh newPage
     emit(newPage);
   }
 }
