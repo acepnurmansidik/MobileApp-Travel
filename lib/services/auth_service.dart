@@ -26,13 +26,20 @@ class AuthService {
           email: email,
           name: name,
           balance: 280000000,
-          hobby: hobby
-      );
+          hobby: hobby);
 
       // **Register ke dalam firestore
       await UserService().setUser(user);
 
       return user;
+    } catch (e) {
+      throw e;
+    }
+  }
+
+  Future<void> singOut() async {
+    try {
+      await _auth.signOut();
     } catch (e) {
       throw e;
     }
