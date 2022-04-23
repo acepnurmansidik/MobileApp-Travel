@@ -4,7 +4,13 @@ import 'package:airplane/shared/theme.dart';
 import 'package:airplane/ui/widgets/custome_button.dart';
 
 class SignUpPage extends StatelessWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+  SignUpPage({Key? key}) : super(key: key);
+
+  // untuk handle setiap perubahan pada nilai text form fieldnya
+  TextEditingController nameController = TextEditingController(text: '');
+  TextEditingController emailController = TextEditingController(text: '');
+  TextEditingController passwordController = TextEditingController(text: '');
+  TextEditingController hobbyController = TextEditingController(text: '');
 
   @override
   Widget build(BuildContext context) {
@@ -21,30 +27,34 @@ class SignUpPage extends StatelessWidget {
     Widget inputSection() {
       Widget nameInput() {
         return CustomeTextFormField(
-          title: 'Full Name', 
-          hintText: 'Your fullname'
+          title: 'Full Name',
+          hintText: 'Your fullname',
+          controller: nameController,
         );
       }
 
       Widget emailInput() {
         return CustomeTextFormField(
-          title: 'Email Address', 
-          hintText: 'Your email address'
+          title: 'Email Address',
+          hintText: 'Your email address',
+          controller: emailController,
         );
       }
 
       Widget passwordInput() {
         return CustomeTextFormField(
-          obscureText: true, 
-          title: 'Your password', 
-          hintText: 'Password'
+          obscureText: true,
+          title: 'Your password',
+          hintText: 'Password',
+          controller: passwordController,
         );
       }
 
       Widget hobbyInput() {
         return CustomeTextFormField(
-          title: 'Hobby', 
-          hintText: 'Your hobby'
+          title: 'Hobby',
+          hintText: 'Your hobby',
+          controller: hobbyController,
         );
       }
 
