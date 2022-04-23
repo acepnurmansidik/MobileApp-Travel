@@ -5,15 +5,13 @@ import 'package:airplane/shared/theme.dart';
 import 'package:airplane/ui/widgets/custome_button.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SignUpPage extends StatelessWidget {
-  SignUpPage({Key? key}) : super(key: key);
+class SignInPage extends StatelessWidget {
+  SignInPage({Key? key}) : super(key: key);
 
   // untuk handle setiap perubahan pada nilai text form fieldnya
-  final TextEditingController nameController = TextEditingController(text: '');
   final TextEditingController emailController = TextEditingController(text: '');
   final TextEditingController passwordController =
       TextEditingController(text: '');
-  final TextEditingController hobbyController = TextEditingController(text: '');
 
   @override
   Widget build(BuildContext context) {
@@ -21,21 +19,13 @@ class SignUpPage extends StatelessWidget {
       return Container(
         margin: EdgeInsets.only(top: 30),
         child: Text(
-          'Join us and get\nyour next journey',
+          'Singn In to\nexplore with us',
           style: blackStyle.copyWith(fontSize: 24, fontWeight: semibold),
         ),
       );
     }
 
     Widget inputSection() {
-      Widget nameInput() {
-        return CustomeTextFormField(
-          title: 'Full Name',
-          hintText: 'Your fullname',
-          controller: nameController,
-        );
-      }
-
       Widget emailInput() {
         return CustomeTextFormField(
           title: 'Email Address',
@@ -50,14 +40,6 @@ class SignUpPage extends StatelessWidget {
           title: 'Your password',
           hintText: 'Password',
           controller: passwordController,
-        );
-      }
-
-      Widget hobbyInput() {
-        return CustomeTextFormField(
-          title: 'Hobby',
-          hintText: 'Your hobby',
-          controller: hobbyController,
         );
       }
 
@@ -83,13 +65,7 @@ class SignUpPage extends StatelessWidget {
             }
 
             // jika tombolnya sudah tidak loading
-            return CustomeButton(
-                title: 'Get Started',
-                onPressed: () => context.read<AuthCubit>().signUp(
-                    email: emailController.text,
-                    name: nameController.text,
-                    password: passwordController.text,
-                    hobby: hobbyController.text));
+            return CustomeButton(title: 'Sign In', onPressed: () {});
           },
         );
       }
@@ -101,25 +77,19 @@ class SignUpPage extends StatelessWidget {
             color: kWhiteColor,
             borderRadius: BorderRadius.circular(defaultRadius)),
         child: Column(
-          children: [
-            nameInput(),
-            emailInput(),
-            passwordInput(),
-            hobbyInput(),
-            submitButton()
-          ],
+          children: [emailInput(), passwordInput(), submitButton()],
         ),
       );
     }
 
-    Widget singInButton() {
+    Widget signUpButton() {
       return GestureDetector(
-        onTap: () => Navigator.pushNamed(context, '/sign-in'),
+        onTap: () => Navigator.pop(context),
         child: Container(
           alignment: Alignment.center,
           margin: EdgeInsets.only(top: 50, bottom: 73),
           child: Text(
-            'Have an account? Sign in',
+            'Create account? Sign Up',
             style: greyStyle.copyWith(
                 fontSize: 16,
                 fontWeight: light,
@@ -133,7 +103,7 @@ class SignUpPage extends StatelessWidget {
       body: SafeArea(
         child: ListView(
           padding: EdgeInsets.symmetric(horizontal: defaultMargin),
-          children: [title(), inputSection(), singInButton()],
+          children: [title(), inputSection(), signUpButton()],
         ),
       ),
     );
