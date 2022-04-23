@@ -25,8 +25,7 @@ class AuthCubit extends Cubit<AuthState> {
       // jika berhasil maka akan melakukan emit user
       emit(AuthSuccess(user));
     } catch (e) {
-      // emit(AuthFailed(e.toString()));
-      throw e;
+      emit(AuthFailed(e.toString()));
     }
   }
 }

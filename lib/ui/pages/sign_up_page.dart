@@ -1,7 +1,9 @@
+import 'package:airplane/cubit/auth_cubit.dart';
 import 'package:airplane/ui/widgets/custome_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:airplane/shared/theme.dart';
 import 'package:airplane/ui/widgets/custome_button.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignUpPage extends StatelessWidget {
   SignUpPage({Key? key}) : super(key: key);
@@ -59,9 +61,36 @@ class SignUpPage extends StatelessWidget {
       }
 
       Widget submitButton() {
-        return CustomeButton(
-            title: 'Get Started',
-            onPressed: () => Navigator.pushNamed(context, '/bonus'));
+        return BlocConsumer<AuthCubit, AuthState>(
+          listener: (context, state) {
+            // akan melakukan listen jika AuthState failed atau success
+            if (state is AuthSuccess) {
+              Navigator.pushNamedAndRemoveUntil(
+                  context, '/bonus', (route) => false);
+            } else if (state is AuthFailed) {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  backgroundColor: kRedColor,
+                  content: Text(state.error.toString())));
+            }
+          },
+          builder: (context, state) {
+            // jika tombolnya loading
+            if (state is AuthLoading) {
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+
+            // jika tombolnya sudah tidak loading
+            return CustomeButton(
+                title: 'Get Started',
+                onPressed: () => context.read<AuthCubit>().signUp(
+                    email: emailController.text,
+                    name: nameController.text,
+                    password: passwordController.text,
+                    hobby: hobbyController.text));
+          },
+        );
       }
 
       return Container(

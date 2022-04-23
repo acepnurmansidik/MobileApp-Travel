@@ -25,7 +25,9 @@ class AuthService {
           id: userCredential.user!.uid,
           email: email,
           name: name,
-          balance: 280000000);
+          balance: 280000000,
+          hobby: hobby
+      );
 
       // **Register ke dalam firestore
       await UserService().setUser(user);

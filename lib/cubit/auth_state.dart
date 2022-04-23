@@ -26,7 +26,7 @@ class AuthSuccess extends AuthState {
 
 // ketika failed melakukan auth
 class AuthFailed extends AuthState {
-  final UserModel error;
+  final String error;
 
   AuthFailed(this.error);
 
